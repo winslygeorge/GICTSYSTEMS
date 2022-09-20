@@ -1,0 +1,341 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    
+        }
+    
+        body{
+    
+            background-color: #333232;
+        }
+    .body{
+     
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #333232;
+        overflow:hidden;    
+        display: flex;
+        flex-direction: column;
+    
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        z-index: 1;
+    }
+    
+    
+    
+    body{
+      width: 100%;
+    
+        height: 100%;
+    
+    }
+    .container1{
+    
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .appbar{
+
+        width: 30%;
+        height: fit-content;
+    
+        display: flex;
+        flex-direction: row;
+    
+    }
+    
+    img{
+        display: inline;
+    }
+    
+    header{
+    
+        position: sticky;
+        top: 0px;
+    z-index: 2;
+    font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        height: 8%;
+        color: whitesmoke;
+        background-color: #051829e0;
+    align-content: center;
+       display: flex;
+       flex-direction: column;
+    }
+    
+    
+    
+    .container1{
+        
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu{
+    
+        padding: 8px;
+        order: 1;
+        flex:1;
+    }
+    
+    .appbar{
+        order: 2;
+        flex:2;
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
+      
+    
+        text-align: center;
+    }
+    
+    .appname {
+    
+        padding: 1%;
+    
+       
+     
+       align-content: center;
+    
+       position: relative;
+     
+        order: 1;
+    }
+    
+    
+    
+    .profileIcon{
+    
+    padding: 1%;
+    margin-top: 2px;
+    margin-right: 0px;
+    
+    }
+    
+    
+    @keyframes slideLeft{
+    
+        from {left: -180%;}
+        to {left: 0%;}
+    }
+    
+    @keyframes slideRight{
+    
+        from {right: -100%;}
+        to {right: 0%;}
+    }
+    
+    footer{
+    
+        background-color: rgb(19, 18, 18);
+    
+        width: inherit;
+        height: fit-content;
+        padding: 4%;
+    }
+
+    
+    
+
+    
+      .icon{
+        
+        padding-left: 20%;
+        margin-top: 1%;
+        padding-right: 10%;
+        order:2;
+            display: flex;
+        }
+    
+    
+        @media screen and (max-width: 770px) {
+        /* start of medium tablet styles */
+    
+        .icon{
+            display: none;
+        }
+        
+      
+        }
+    
+       
+    
+    
+       .loggeduserIcon{
+    
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+       }
+    
+   
+    
+       .menuIcon{
+    
+        width: 30px;
+       }
+    
+    
+       #tabView{
+    
+        display: flex;
+        border-bottom: 2px solid whitesmoke ;
+       
+    }
+    .tItem{
+    
+        flex-direction: column;
+        margin: auto;
+        font-weight: bolder;
+        text-decoration: none;
+        color: wheat;
+        padding: 1%;
+       
+    }
+    
+    .tItem:hover{
+    
+        background-color: rgb(47, 174, 224);
+        color: rgb(233, 223, 223);
+        border-radius: 10px;
+    }
+    .menuList, .revMenuList{
+
+        position: absolute;
+        height: 100vh;
+        width: fit-content;
+    
+        background-color: #05243f;
+        opacity: 1;
+    
+        z-index: 1;
+    
+       
+        border: 2px outset #0E4A7E ;
+    
+        display: none;
+        left:  -80%;
+    
+        overflow-y: auto;
+    
+        
+    }
+    
+    .menuList a, .revMenuList a{
+    
+        text-decoration: none;
+        border-bottom: 2px solid #05323d;
+        padding: 20px;
+        background-color: #052038;
+        margin: auto;
+        color: aqua;
+        display: flex;
+        flex-direction: row;
+        text-align: start;
+        border-radius: 10px;
+        
+    }
+    
+    .menuList a:hover, .revMenuList a:hover{
+    
+        background-color: #0E4A7E;
+        color: whitesmoke;
+        font-size: 1.2rem;
+    }
+    
+    .menuList h4, .revMenuList h4{
+    
+        padding: 4%;
+       
+    }
+    
+    a{
+    
+        text-decoration: none;
+    }
+    
+    
+    
+    .menuitem{
+        display: block;
+    }
+    
+    
+
+    .ordertable{
+
+        border-collapse: collapse;
+        
+    }
+    
+    .tablerow{
+    
+        background-color: white;
+        color: rgb(78, 76, 76);
+    }
+    
+    thead{
+    
+        background-color: grey;
+        color: white;
+    
+        font-style: oblique;
+    
+        font: bolder;
+    
+        font-size: small;
+    
+        font-weight: bolder;
+    }
+    
+    
+    
+    .tablecell{
+    
+    margin: 0%;
+    padding: 2%;
+    }
+    form{
+
+        width: 100%;
+       
+    }
+    
+    .form{
+    
+    width: 80%;
+    height: fit-content;
+    margin: auto;
+    overflow: hidden;
+    
+    }
+    label{
+
+        color: grey;
+        font-size: 1.2rem;
+        
+       
+    }
+    input{
+
+        width: 90%;
+        height: 34px ;
+    
+        color: rgb(150, 70, 5);
+    
+        font-size: 1rem;
+        border: 2px solid rgb(255, 255, 255);
+    
+        font-style: oblique;
+    
+    
+        border-bottom: 2px solid rgb(152, 153, 151);
+    }
+    
+    input:focus{
+    
+        border: 2px solid rgba(71, 134, 9, 0.521);
+    
+    }

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GICTSYSTEMS</title>
+    <link rel="stylesheet" href="./../css/style.css">
+   
+    <script src="./../js/jquery.js"></script>
+    <script src="./../js/main.js"></script>
+ 
+        <link rel="shortcut icon" href="./../images/networking-100.png" type="image/x-icon">
+
+        <style>
+         #retriveTab{
+
+            display: none;
+         }
+    .alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+
+ width: 70%;
+
+  margin: auto;
+  display: none;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+        </style>
+
+</head>
+<body>
+  <header class="headerContainer">
+    <div class="container1">
+        
+        <div class="appbar">
+
+            <div class="appname">
+                <h1 class="bizTitle">GICTSYSTEMS PROJECT</h1>
+            </div>
+        </div>
+
+
+        <div class="menu">
+            <img src="./../images/icons8-menu (1).svg" class="menuIcon" style="width: 50px;" />
+
+        </div>
+        <div class="profileIcon" style="order: 3; padding: 1%;">
+            
+            <a href="/login"> <img src="./../images/user.svg" class="menuIcon" /></a>
+          
+        </div>
+    </div>
+
+    <div class="menuList">
+        <div class="menu">
+            <img src="./../images/icons8-menu (1).svg" class="menuIcon" style="width: 60px;" />
+
+        </div>
+
+        <a  class="menuitem"> <img src="./../images/home.svg" alt="" srcset="" width="30px" style="">
+            <h4 onclick="handleShowForm()">Form</h4>
+        </a>
+        <a  class="menuitem"> <img src="./../images/team.svg" alt="" srcset="" width="30px" style="">
+            <h4 onclick= "handleItems()">Table Items</h4>
+       </a>
+    </div>
+
+
+
+
+</header>
+
+   <div id="body" style="background-color: white;">
+
+      <nav style="width: 100%;">
+
+         <table style="width: 99%; margin:auto; padding: 1%;">
+            <thead>
+               <th style="padding: 1%; color:aqua; font-size:large">
+                  <a onclick="handleShowForm()">Form</a> 
+               </th>
+               <th style="padding: 1%; color:aqua; font-size:large">
+                 <a onclick="handleItems()" >Table</a> 
+               </th>
+            </thead>
+         </table>
+
+      </nav>
+
+      <div class="tabs" style="">
+         <div id="postTab">
+
+            <div class="alert" id="resAlert">
+  
+</div>
+
+            <form action="?" onsubmit="event.preventDefault(),  handlePostReq()" style="width: 90%; margin:auto; padding:1%">
+
+               <label for="Fullnames">Full Name : </label> <br>
+               <input type="text" name="names" id="names" required><br><br>
+               <label for="Email">Email : </label><br>
+               <input type="email" name="email" id="email" required><br><br>
+               <label for="Phone Number">Phone Number : </label><br>
+               <input type="tel" name="phone" id="phone" required><br><br>
+               <label for="Address" >Address : </label><br>
+               <input type="text" name="address" id="address" required><br><br>
+               <input type="submit" value="submit" style="width:fit-content; background-color:green; color:white; font-weight:bolder; border-radius:5px; padding:10px">
+
+            </form>
+         </div>
+
+         <div class="retriveTab" id = "retriveTab">
+
+   <div class="cartOrders" style="margin: 0%; padding: 0%;">
+
+    <table class="ordertable" style="padding: 4%; width: 100%;" >
+        <thead class="thead" >
+            
+                <td class="tablecell">
+                    ID
+                </td>
+                <td class="tablecell">
+                    Message
+                </td>
+                <td class="tablecell">
+                    Age 
+                </td>
+                 
+                   <td class="tablecell">
+                     Edit
+                </td>
+                      
+        </thead>
+        <tbody class="tablebody" id="gictItemsTabl">
+      
+        </tbody>
+    </table>
+</div>
+      </div>
+   </div>
+   </div>
+
+<footer style="color: aquamarine;">
+    <table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
+        <tr>
+            <td id="footer"><small>&copy; 2022 by Winslow Georgos. Proudly created with GeorgosTech.</small></td>
+            <td> <a href="https://twitter.com/GeorgosTechnol1"><img src="./../images/twitter.svg" alt=""
+                        style="width: 20px;"></a></td>
+            <td><a href="https://www.youtube.com/channel/UC3wWQmjAuvUcWIedf959Y0g"> <img src="./../images/youtube.svg"
+                        alt="" style="width: 20px;"></a></td>
+            <td> <a href="https://www.instagram.com/georgos_tech/"><img src="./../images/instagram.svg" alt=""
+                        style="width: 20px;"></a></td>
+            <td> <a href="https://www.facebook.com/georgos.winslow"><img src="./../images/facebook.svg" alt=""
+                        style="width: 20px;"></a></td>
+        </tr>
+    </table>
+</footer>
+   <script>
+
+      function handleItems(){
+
+         document.getElementById('postTab').style.display = "none"
+         document.getElementById('retriveTab').style.display = "block"
+
+            handleGetItems()
+         setInterval(handleGetItems, 10000)
+
+      }
+
+      function handleShowForm(){
+
+         document.getElementById('postTab').style.display = "block"
+         document.getElementById('retriveTab').style.display = "none"
+
+      }
+
+   function handleGetItems(){
+
+            //--------------------------------------------------------------------------------------------------------
+
+            var xhttp = new XMLHttpRequest();
+           
+
+            xhttp.onreadystatechange = function() {
+               if (this.readyState == 4 && this.status == 200) {
+                  
+                  var dets =JSON.parse(xhttp.responseText);
+
+                  if (dets[0].code == 101){
+
+                    alert("Please connect to the internet and reload the page again!!!")
+                  }
+
+                  var row = ""
+
+                  for(var x = 0; x < dets.length; x++){
+
+                     var det = dets[x]
+
+                     
+
+                     row += `<tr class="tablerow" id="id${det.ID}">
+                <td class="tablecell">
+                    ${det.ID} 
+                </td>
+                <td class="tablecell">
+                   <a style="text-decoration: none; color: rgb(78, 76, 76);"> ${det.Message} </a>
+                </td>
+                <td class="tablecell">
+                    <a  style="text-decoration: none; color: rgb(78, 76, 76);">${det.Age}</a>
+                </td>
+                  <td class="tablecell">
+               <button onclick="handleEditItem(${det.Age},'${det.Message}')" style="background-color: grey; border-radius: 3%; border: 2px solid grey; color: white; padding: 1%;"> <span style="padding: 4%;"> Edit</span></button>
+                </td>
+            </tr>`
+
+            
+                  }
+
+                  document.getElementById('gictItemsTabl').innerHTML = row
+                  
+               }
+            };
+            xhttp.open('GET', '/gict/get', true);
+            
+            xhttp.send();
+         }
+      function handlePostReq(){
+
+    var details  ={
+
+        names : document.getElementById('names').value,
+        phone : document.getElementById('phone').value,
+        email : document.getElementById('email').value,
+        address : document.getElementById('address').value
+
+    } 
+
+    //-------------------------------------
+const xhr = new XMLHttpRequest();
+
+xhr.open('POST', '/post/gict', true);
+
+xhr.setRequestHeader("Content-Type", "application/json");
+
+xhr.onreadystatechange = () => { 
+  if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+  
+  var res = JSON.parse("["+xhr.responseText+"]")
+
+  console.log(res.code)
+
+  if (res[0].code == 200){
+
+   var successAlert = document.getElementById("resAlert")
+
+   successAlert.innerHTML = `<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Hurray!</strong> Submit operation was successful.`
+  successAlert.style.backgroundColor = 'green'
+  successAlert.style.display = 'block'
+
+  }else if(res[0].code == 404){
+
+      var successAlert = document.getElementById("resAlert")
+
+   successAlert.innerHTML = `<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Error!</strong> Submit operation was not successful. check if your internet connection is working...`
+  successAlert.style.backgroundColor = 'red'
+  successAlert.style.display = 'block'
+
+  }else if (res[0].code == 101){
+
+   var successAlert = document.getElementById("resAlert")
+
+   successAlert.innerHTML = `<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Oops!</strong> ${res[0].mobTelErr} ${res[0].lnameErr} ${res[0].addressErr}`
+  successAlert.style.backgroundColor = 'orange'
+  successAlert.style.display = 'block'
+  }
+
+  }
+}
+//xhr.send("names="+details.names+"&phone="+details.phone+"&address="+details.address+"&email="+details.email);
+xhr.send(JSON.stringify(details))
+    //--------------------------------
+
+} 
+
+   function handleEditItem(ID , mes){
+
+      var mes = prompt("Enter new Message..", mes)
+      var age = prompt("Enter age..", ID)
+
+      
+
+   }
+   </script>
+
+    
+    <!--====== Main js ======-->
+    <script src="./../assets/js/main.js"></script>
+
+</body>
+</html>
